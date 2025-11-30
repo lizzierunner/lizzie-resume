@@ -183,6 +183,40 @@ document.addEventListener('DOMContentLoaded', function() {
     
     document.body.appendChild(printButton);
 
+    // Add "Don't Panic" button - Hitchhiker's Guide Easter Egg
+    const dontPanicButton = document.createElement('button');
+    dontPanicButton.className = 'dont-panic';
+    dontPanicButton.textContent = "DON'T PANIC";
+    dontPanicButton.title = "The Hitchhiker's Guide to the Galaxy";
+    
+    const hitchhikerQuotes = [
+        "Time is an illusion. Lunchtime doubly so.",
+        "The ships hung in the sky in much the same way that bricks don't.",
+        "Would it save you a lot of time if I just gave up and went mad now?",
+        "Flying is learning how to throw yourself at the ground and miss.",
+        "In the beginning the Universe was created. This has made a lot of people very angry.",
+        "The Answer to Life, the Universe, and Everything is 42.",
+        "So long, and thanks for all the fish!",
+        "Forty-two. I checked it very thoroughly, and that quite definitely is the answer.",
+        "There is a theory which states that if ever anyone discovers exactly what the Universe is for and why it is here, it will instantly disappear and be replaced by something even more bizarre and inexplicable.",
+        "I'd far rather be happy than right any day."
+    ];
+    
+    let quoteIndex = 0;
+    
+    dontPanicButton.addEventListener('click', function() {
+        alert(hitchhikerQuotes[quoteIndex]);
+        quoteIndex = (quoteIndex + 1) % hitchhikerQuotes.length;
+        
+        // Fun animation
+        this.style.transform = 'scale(0.9) rotate(5deg)';
+        setTimeout(() => {
+            this.style.transform = 'scale(1) rotate(0deg)';
+        }, 200);
+    });
+    
+    document.body.appendChild(dontPanicButton);
+
     // Add CSS animation for tooltip
     const style = document.createElement('style');
     style.textContent = `

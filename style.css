@@ -800,6 +800,88 @@ body::after {
     font-size: 0.95rem;
 }
 
+/* Douglas Adams Easter Eggs */
+.easter-egg {
+    display: inline-block;
+    animation: float 2s ease-in-out infinite;
+    cursor: help;
+    font-size: 1.2rem;
+}
+
+.easter-egg-small {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    cursor: help;
+    transition: all 0.3s ease;
+}
+
+.easter-egg-small:hover {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+.easter-egg-label {
+    cursor: help;
+    position: relative;
+}
+
+.easter-egg-cert {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+    border: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.easter-egg-cert:hover {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.1));
+    border-color: rgba(212, 175, 55, 0.6);
+}
+
+.easter-egg-footer {
+    font-size: 2rem;
+    margin-top: 1rem;
+    cursor: help;
+    display: inline-block;
+    animation: swim 3s ease-in-out infinite;
+}
+
+@keyframes swim {
+    0%, 100% {
+        transform: translateX(0) rotate(0deg);
+    }
+    25% {
+        transform: translateX(10px) rotate(5deg);
+    }
+    75% {
+        transform: translateX(-10px) rotate(-5deg);
+    }
+}
+
+/* Don't Panic button */
+.dont-panic {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: #ff0000;
+    color: white;
+    border: 3px solid white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(255, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    z-index: 1001;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.dont-panic:hover {
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 0 8px 30px rgba(255, 0, 0, 0.8);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
